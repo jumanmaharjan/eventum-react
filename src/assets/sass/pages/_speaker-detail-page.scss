@@ -1,0 +1,104 @@
+@use "../assists" as *;
+
+.our-speaker-details-section {
+    padding: 150px 0 0;
+
+    @include bp(mdx) {
+        padding: 110px 0 0;
+    }
+
+    div.team-info-wrapper {
+        padding: 0;
+        background-color: transparent;
+        grid-template-columns: 40% auto;
+
+        @include bp(mdx) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.experience-wrappered {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    @include bp(mdx) {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-info {
+        padding: 40px 30px 40px 50px;
+
+        .exp-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            i {
+                color: $light-color;
+                font-size: 38px;
+            }
+        }
+
+        &:nth-child(even) {
+            .exp-title i {
+                color: $primary-color;
+            }
+        }
+
+        .experience-list {
+            li {
+                display: flex;
+                align-items: baseline;
+                gap: 8px;
+
+                i {
+                    font-size: 14px;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.speaker-detail-schedule {
+    background-image: radial-gradient(at center center, #6B0062E0 0%, $secondary-color 45%);
+    margin-bottom: 150px;
+
+    @include bp(mdx) {
+        margin-bottom: 100px;
+    }
+
+    .speaker-schedule-title {
+        margin-bottom: 70px;
+
+        @include bp(mdx) {
+            margin-bottom: 30px;
+        }
+
+        h5 {
+            padding: 12px 35px;
+            border-radius: $border-radius-degree;
+            background-color: $primary-color;
+            margin: 0;
+        }
+    }
+
+    .container {
+        .day-routine-content {
+            .routine-detail {
+                margin-bottom: 80px;
+
+                @include bp(mdx) {
+                    margin-bottom: 50px;
+                }
+
+                .routine-description {
+                    background-color: rgba($color: #000000, $alpha: 0.70) !important;
+                }
+            }
+        }
+    }
+}

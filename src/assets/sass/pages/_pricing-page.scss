@@ -1,0 +1,5 @@
+@use "../assists" as *;
+
+.pricing-section {
+    @include tb150-margin;
+}

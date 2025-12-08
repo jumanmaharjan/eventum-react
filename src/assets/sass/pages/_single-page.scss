@@ -1,0 +1,21 @@
+@use "../assists" as *;
+
+.single-page-section {
+    @include tb150-padding;
+
+    .single-feature-img {
+        margin-bottom: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .section-head {
+        margin-bottom: 20px;
+    }
+}
+
+.policy-page-section {
+    @include tb150-margin;
+}

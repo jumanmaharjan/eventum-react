@@ -1,0 +1,184 @@
+@use "../../assists/" as *;
+@use "../../base/" as *;
+
+.home-contact-section {
+  background-image: url(../../assets/img/eventux-image-001.jpg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  @include tb150-padding;
+
+  &:before {
+    content: "";
+    background-image: url(../../assets/img/eventux-image-002.png);
+    background-position: top center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+  }
+
+  .contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+      90deg,
+      $secondary-color 60%,
+      rgba(242, 41, 91, 0.35) 50%
+    );
+    opacity: 0.95;
+  }
+
+  .contact-info-container {
+    display: grid;
+    grid-template-columns: auto 55%;
+    gap: 70px;
+    align-items: center;
+
+    @include bp(lgx) {
+      gap: 50px;
+    }
+
+    @include bp(mdx) {
+      grid-template-columns: auto;
+    }
+
+    .contact-form-inner {
+      .section-head {
+        margin-bottom: 36px;
+
+        .section-info {
+          margin-bottom: 0;
+        }
+      }
+
+      .contact-from {
+        input,
+        textarea {
+          color: #ffffff;
+        }
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .contact-details-content {
+      display: grid;
+      grid-template-columns: auto 55%;
+      border-radius: $border-radius-degree;
+      overflow: hidden;
+      align-items: center;
+
+      @include bp(smx) {
+        grid-template-columns: auto;
+      }
+
+      .contact-detail-wrapper {
+        padding: 30px;
+        background-color: $primary-color;
+        height: 100%;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+        }
+
+        .contact-details-list {
+          ul {
+            li {
+              margin-bottom: 35px;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              text-align: center;
+
+              .icons {
+                i {
+                  height: 70px;
+                  width: 70px;
+                  line-height: 69px;
+                  background-color: $secondary-color;
+                  color: $primary-color;
+                  font-size: 35px;
+                  box-shadow: 6px 6px 0px 0px rgba($secondary-color, 0.2);
+                  display: inline-block;
+                  border-radius: 50%;
+                  margin-bottom: 18px;
+                }
+              }
+
+              .details-content {
+                line-height: 1;
+
+                h6 {
+                  color: $light-color;
+                  margin-bottom: 6px;
+                  @include font16;
+                }
+
+                span {
+                  margin-bottom: 1px;
+                  display: inline-block;
+                  color: $light-color;
+                  @include font14;
+
+                  a {
+                    color: $light-color;
+
+                    &:hover {
+                      color: $hover-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .contact-social-wrapper {
+          text-align: center;
+
+          .social-title {
+            margin-bottom: 15px;
+          }
+
+          ul {
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            justify-content: center;
+
+            a {
+              font-size: 13px;
+              color: #ffffff;
+              width: 32px;
+              height: 32px;
+              line-height: 31px;
+              display: inline-block;
+              text-align: center;
+              border: 1px solid rgba($color: $light-color, $alpha: 0.35);
+              border-radius: 50%;
+              -webkit-transition: all 0.4s;
+              -moz-transition: all 0.4s;
+              -ms-transition: all 0.4s;
+              -o-transition: all 0.4s;
+              transition: all 0.4s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

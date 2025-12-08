@@ -1,0 +1,63 @@
+@use "../assists" as *;
+
+.account-recover-section {
+    margin: 100px 0;
+
+    @include bp(mdx) {
+        margin: 60px 0;
+    }
+
+    .recover-wrapper {
+        box-shadow: 15px 15px 0px 0px rgba(240, 46, 136, 0.2);
+        @include border-radius($border-radius-degree);
+        padding: 50px;
+
+        .recover-info {
+            color: $light-color;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+
+            @include bp(mdx) {
+                font-size: 14px;
+            }
+        }
+
+        .form-group {
+            label {
+                margin-bottom: 10px;
+                color: $text-color;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1.2;
+
+                .label-star {
+                    color: red;
+                }
+            }
+
+            input {
+                background-color: $sub-secondary-color;
+
+                &:focus {
+                    background-color: rgba(232, 240, 254, 1.0);
+                }
+            }
+        }
+
+        .recover-btn button {
+            color: $light-color;
+            background-color: $primary-color;
+            transition: all 0.4s;
+
+            &:hover {
+                @include filter(saturate(1.5) brightness(1.2));
+            }
+        }
+
+        @include bp(smx) {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+}

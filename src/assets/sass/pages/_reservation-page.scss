@@ -1,0 +1,149 @@
+@use "../assists" as *;
+
+.booking-section {
+    @include tb150-margin;
+}
+
+.booking-content {
+    background-color: #f8f8f8;
+    box-shadow: 5px 5px 0px 0px rgba(240, 46, 136, 0.2);
+    @include border-radius($border-radius-degree);
+    padding: 30px;
+    margin-bottom: 60px;
+
+    .form-title {
+        margin-bottom: 30px;
+
+        h4 {
+            text-transform: uppercase;
+            display: inline-block;
+            color: $primary-color;
+        }
+
+        span {
+            background-color: $primary-color;
+            @include border-radius(100%);
+            color: $light-color;
+            display: inline-block;
+            @include font-size(20);
+            height: 50px;
+            line-height: 50px;
+            margin-right: 20px;
+            text-align: center;
+            width: 50px;
+        }
+    }
+
+    .info-content {
+        border-top: 1px solid #e6e6e6;
+        margin-top: 30px;
+        padding-top: 30px;
+
+        h5 {
+            color: $primary-color;
+        }
+    }
+
+    @include bp(smx) {
+        margin-bottom: 30px;
+
+        .form-title {
+            margin-bottom: 15px;
+
+            span {
+                height: 30px;
+                line-height: 30px;
+                margin-right: 16px;
+                width: 30px;
+            }
+        }
+    }
+}
+
+.form-policy {
+    .form-group {
+        margin-bottom: 30px;
+
+        label.checkbox-list {
+            color: $primary-color;
+        }
+    }
+}
+
+.booking-section {
+
+    .widget-support-wrap {
+        background-color: #F8F8F8;
+        box-shadow: 5px 5px 0px 0px rgba(240, 46, 136, 0.2);
+        @include border-radius($border-radius-degree);
+        padding: 30px;
+        text-align: center;
+
+        .icon {
+            font-size: 52px;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .support-content {
+            h5 {
+                color: #383838;
+                font-weight: 400;
+            }
+
+            .phone {
+                font-family: $title-font;
+                font-size: 30px;
+                display: block;
+                margin-bottom: 10px;
+                color: $primary-color;
+                line-height: 1;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .price-table-summary {
+        background-color: #F8F8F8;
+        box-shadow: 5px 5px 0px 0px rgba(240, 46, 136, 0.2);
+        @include border-radius($border-radius-degree);
+        margin-bottom: 50px;
+        padding: 30px;
+
+        .bg-title {
+            background-color: $primary-color;
+            @include border-radius($border-radius-degree);
+            color: $light-color;
+            padding: 10px 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        table {
+            margin-bottom: 0;
+
+            tr {
+                td {
+                    border-right: none;
+                }
+
+                &:last-child {
+                    td {
+                        border-bottom: none
+                    }
+                }
+            }
+        }
+    }
+
+    @include bp(smx) {
+        padding-bottom: 70px;
+    }
+
+    @include bp(lgx) {
+        .booking-form-wrap {
+            margin-bottom: 40px;
+        }
+    }
+}

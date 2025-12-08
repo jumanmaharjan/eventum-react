@@ -1,0 +1,84 @@
+@use "../assists" as *;
+
+.testimonial-page-section {
+    @include tb150-margin;
+
+    .testimonial-wrapper-outer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 70px;
+
+        @include bp(mdx) {
+            grid-template-columns: 1fr;
+        }
+
+        .testimonial-item {
+            padding: 50px 40px;
+            display: flex;
+            gap: 30px;
+
+            @include bp(xsx) {
+                padding: 50px 20px 30px;
+                flex-direction: column;
+            }
+
+            .testimonial-img {
+                flex-basis: 35%;
+                position: relative;
+                border-radius: 50%;
+                text-align: center;
+
+                img {
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                &:before {
+                    content: "\e99a";
+                    font-family: elementskit !important;
+                    position: absolute;
+                    top: -26px;
+                    right: 47%;
+                    font-size: 20px;
+                    color: $secondary-color;
+                    background-color: $primary-color;
+                    border: 5px solid $secondary-color;
+                    width: 60px;
+                    line-height: 53px;
+                    height: 60px;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    border-radius: 50%;
+                }
+            }
+
+            .testimonial-detail {
+                flex-basis: 65%;
+
+                .testimonial-quote {
+                    font-style: italic;
+                    margin-bottom: 20px;
+                }
+
+                .author-info {
+                    .author-name {
+                        font-weight: 600;
+                        font-family: $title-font;
+                        margin-bottom: 5px;
+                    }
+
+                    .author-desc {
+                        font-size: 14px;
+                        color: $primary-color;
+                        font-weight: 500;
+
+                        @include bp(mdx) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

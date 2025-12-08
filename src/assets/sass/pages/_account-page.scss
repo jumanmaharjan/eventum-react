@@ -1,0 +1,93 @@
+@use "../assists" as *;
+
+.account-section {
+    @include tb150-margin;
+
+    .account-title {
+        margin-bottom: 30px;
+        color: $primary-color;
+    }
+
+    .login-form {
+        padding: 50px;
+        box-shadow: 15px 15px 0px 0px rgba(240, 46, 136, 0.2);
+        @include border-radius($border-radius-degree);
+
+        .form-group {
+            label {
+                margin-bottom: 10px;
+                color: $text-color;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1.2;
+
+                .label-star {
+                    color: red;
+                }
+            }
+
+            input:not([type=submit]) {
+                background-color: $sub-secondary-color;
+                @include border-radius($border-radius-degree);
+
+                &:focus {
+                    background-color: rgba(232, 240, 254, 1.0);
+                }
+            }
+
+            .display-password {
+                position: relative;
+
+                .password-show {
+                    position: absolute;
+                    z-index: 1;
+                    right: 20px;
+                    top: 50%;
+                    @include transform(translatey(-50%));
+                    cursor: pointer;
+
+                    &:before {
+                        content: '\f06e';
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 15px;
+                    }
+                }
+
+                .show {
+                    &:before {
+                        content: '\f070';
+                    }
+                }
+            }
+        }
+
+        .login-btn {
+            margin-right: 16px;
+            padding: 12px 32px;
+            text-transform: capitalize;
+            @include border-radius($border-radius-degree);
+            @include transition(0.4s all);
+        }
+
+        .forget-btn {
+            margin-top: 15px;
+
+            a {
+                background-color: transparent;
+                color: $primary-color;
+                @include transition(color 0.4s);
+                font-weight: 500;
+                font-size: 12px;
+
+                &:hover {
+                    color: $hover-color;
+                }
+            }
+        }
+
+        @include bp (smx) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}

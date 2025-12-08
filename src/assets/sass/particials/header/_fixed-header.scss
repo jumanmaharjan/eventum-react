@@ -1,0 +1,68 @@
+@use "../../assists/" as *;
+
+.fixed-header {
+    .mid-header {
+        display: none;
+    }
+
+    .mobile-menu-container .slicknav_menu .slicknav_btn {
+        padding: 19px 0
+    }
+
+    .bottom-header {
+        @include box-shadow(0 -3px 10px rgba(0, 0, 0, 0.2));
+        position: fixed;
+        top: 0;
+        width: 100%;
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+        left: 50%;
+        @include translate(-50%, 0);
+        z-index: 999;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        background-color: rgba($secondary-color, 0.3);
+        @include opacity(1);
+        visibility: visible;
+        transition: all 0.4s;
+        border-radius: $border-radius-degree;
+
+        .bottom-header-logo {
+            display: flex;
+            height: auto;
+
+            img {
+                width: 70px;
+            }
+        }
+
+        .hb-group {
+            flex-grow: 1;
+        }
+
+        .appoinment-btn {
+            padding: 7px 0;
+        }
+
+        // fixed mobile nav
+        .mobile-menu-container {
+            .slicknav_nav {
+                @include calc(height, '100vh - 48px');
+
+                @include bp(mdx) {
+                    @include calc(height, '100vh - 42px');
+                }
+
+                @include bp(smx) {
+                    @include calc(height, '100vh - 38px');
+                }
+
+                @include bp(xsx) {
+                    @include calc(height, '100vh - 37px');
+                }
+            }
+        }
+    }
+}

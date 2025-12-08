@@ -1,0 +1,229 @@
+@use "../assists" as *;
+
+.event-detail-section {
+    margin-top: 150px;
+    margin-bottom: 100px;
+
+    @include bp(mdx) {
+        margin-top: 100px;
+    }
+
+    .right-sidebar {
+        order: 1;
+
+        @include bp(lg) {
+            padding-left: 58px;
+            order: 2;
+        }
+
+        .event-feature-image {
+            margin-bottom: 30px;
+        }
+
+        .single-content-wrap {
+            margin-bottom: 35px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .key-title {
+                margin-bottom: 25px;
+            }
+        }
+
+        .key-point-list {
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style-type: none;
+                    margin-bottom: 5px;
+
+                    i {
+                        font-size: 14px;
+                        color: $primary-color;
+                        margin-right: 4px;
+                    }
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.event-speaker-detail {
+    margin-bottom: 150px;
+
+    @include bp(mdx) {
+        margin-bottom: 100px;
+    }
+
+    .speaker-detail-wrapper {
+        padding: 60px;
+        background-color: $box-color;
+        display: grid;
+        grid-template-columns: 35% auto;
+        align-items: center;
+        gap: 60px;
+        border-radius: $border-radius-degree;
+        overflow: hidden;
+
+        @include bp(lgx) {
+            padding: 40px 30px;
+            gap: 60px 30px;
+        }
+
+        @include bp(mdx) {
+            grid-template-columns: 1fr;
+        }
+
+        .speaker-img {
+            border-radius: $border-radius-degree;
+            overflow: hidden;
+            border: 3px solid rgba($color: $primary-color, $alpha: 0.13);
+
+            img {
+                @include bp(mdx) {
+                    text-align: center;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+        }
+
+        .speaker-detail-info {
+            .section-sub-title {
+                margin-bottom: 35px;
+                color: $primary-color;
+            }
+
+            .social-links {
+                li {
+                    margin: 0 5px 0 0;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+
+                a i {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 39px;
+                    background-color: $primary-color;
+                    color: $light-color;
+                    text-align: center;
+                    border-radius: $border-radius-degree;
+                    overflow: hidden;
+                    font-size: 15px;
+
+                    @include bp(mdx) {
+                        font-size: 13px;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 29px;
+                    }
+                }
+
+                a:hover i {
+                    background-color: $hover-color;
+                }
+            }
+
+            .section-paragraph {
+                margin: 20px 0 30px;
+            }
+
+            .contact-details-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px 35px;
+
+                @include bp(lgx) {
+                    grid-template-columns: 1fr;
+                }
+
+                @include bp(mdx) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include bp(smx) {
+                    grid-template-columns: 1fr;
+                }
+
+                .contact-wrapper {
+                    border-radius: $border-radius-degree;
+                    overflow: hidden;
+                    border: 2px solid rgba($color: $primary-color, $alpha: 0.15);
+                    padding: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
+
+                    .icons {
+                        flex-shrink: 0;
+                        flex-basis: 57px;
+
+                        i {
+                            width: 57px;
+                            height: 57px;
+                            line-height: 56px;
+                            background-color: $primary-color;
+                            color: $light-color;
+                            text-align: center;
+                            border-radius: $border-radius-degree;
+                            overflow: hidden;
+                            font-size: 25px;
+                            display: inline-block;
+
+                            @include bp(mdx) {
+                                font-size: 20px;
+                                width: 45px;
+                                height: 45px;
+                                line-height: 44px;
+                            }
+
+                        }
+                    }
+
+                    .details-content {
+                        flex-grow: 1;
+
+                        p {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin: 0;
+                        }
+
+                        span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: $light-color;
+
+                            a {
+                                color: $light-color;
+
+                                &:hover {
+                                    color: $hover-color;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(3n+2),
+                    &:nth-child(3n+3) {
+                        .icons i {
+                            background-color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

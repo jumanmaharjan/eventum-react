@@ -1,0 +1,10 @@
+@use "../assists" as *;
+
+.feature-section {
+    margin-top: 150px;
+    margin-bottom: 100px;
+
+    @include bp(mdx) {
+        margin-top: 100px;
+    }
+}

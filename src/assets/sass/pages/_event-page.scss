@@ -1,0 +1,119 @@
+@use "../assists" as *;
+
+.event-list-section {
+    margin-top: 150px;
+
+    @include bp(mdx) {
+        margin-top: 100px;
+    }
+
+    .day-routine-content {
+        margin-bottom: 100px;
+    }
+}
+
+.event-list-about-section {
+    margin-bottom: 150px;
+
+    @include bp(mdx) {
+        margin-bottom: 100px;
+    }
+
+    .about-counter-wrapper {
+        @include flex-vh-center;
+        gap: 20px;
+
+        @include bp(lgx) {
+            flex-direction: column;
+        }
+
+        .about-counter-left-side {
+            flex-basis: 25%;
+
+            @include bp(lgx) {
+                text-align: center;
+            }
+        }
+
+        .about-counter-right-side {
+            flex-grow: 1;
+
+            @include bp(lgx) {
+                width: 100%;
+            }
+
+            .time-counter {
+                @include flexbox;
+                @include justify-content(space-evenly);
+                @include flex-wrap(wrap);
+                align-items: center;
+                text-align: center;
+
+                .counter-time {
+                    width: 150px;
+                    height: 150px;
+                    padding: 20px;
+                    @include border-radius($border-radius-degree);
+                    border: 3px solid rgba($primary-color, 0.38);
+                    box-shadow: 10px 10px 0px 0px rgba(107, 0, 98, 0.22);
+                    @include flexbox;
+                    @include flex-direction(column);
+                    @include justify-content(center);
+                    @include align-items(center);
+                    position: relative;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    [class*="counter-"] {
+                        color: $light-color;
+                        @include font-size(48);
+                        font-family: $title-font;
+                        font-weight: 700;
+                        line-height: 1.1;
+                        display: block;
+                        margin-bottom: 3px;
+                    }
+
+                    .label-text {
+                        color: $light-color;
+                        margin-bottom: 0;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+
+                    @include bp(mdx) {
+                        width: 120px;
+                        height: 120px;
+
+                        [class*="counter-"] {
+                            font-size: 32px;
+                        }
+                    }
+                }
+
+                .time-symbol {
+                    font-weight: 700;
+                    font-size: 35px;
+                    font-family: $title-font;
+                    line-height: 1.1;
+                    color: $text-color;
+                    display: inline-block;
+                }
+
+                @include bp(smx) {
+                    gap: 30px 20px;
+
+                    .time-symbol {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

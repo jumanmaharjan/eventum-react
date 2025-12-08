@@ -1,0 +1,96 @@
+@use "../assists" as *;
+
+.contact-page-section {
+    @include tb150-margin;
+
+    .contact-detail-list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 140px;
+
+        @include bp(lgx) {
+            flex-wrap: wrap;
+        }
+
+        @include bp (mdx) {
+            margin-bottom: 100px;
+        }
+
+        .contact-detail-wrapper {
+            padding: 30px 25px;
+            gap: 15px;
+            flex-grow: 1;
+            flex-basis: 32%;
+            display: flex;
+            box-shadow: 10px 10px 0px 0px rgba($primary-color, 0.1);
+
+            @include bp(mdx) {
+                flex-basis: 47%;
+            }
+
+            .icons {
+                flex-shrink: 0;
+
+                i {
+                    color: $primary-color;
+                    font-size: 70px;
+
+                    @include bp(mdx) {
+                        font-size: 50px;
+                    }
+                }
+            }
+
+            .details-content {
+                h6 {
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                }
+
+                span {
+                    a {
+                        margin-bottom: 0;
+                        color: $text-color;
+
+                        &:hover {
+                            color: $hover-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-form-inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        gap: 70px;
+
+        @include bp(lgx) {
+            gap: 50px;
+        }
+
+        @include bp(mdx) {
+            grid-template-columns: 1fr;
+        }
+
+        .map-section {
+            border-radius: $border-radius-degree;
+            overflow: hidden;
+        }
+
+        .contact-from {
+            padding: 60px;
+
+            @include bp(lgx) {
+                padding: 60px 40px;
+            }
+
+            @include bp(xsx) {
+                padding: 40px 30px;
+            }
+        }
+    }
+}

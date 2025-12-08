@@ -1,0 +1,6 @@
+@use "../assists" as *;
+
+.term-and-condition-section,
+.policy-page-section {
+	@include tb150-margin;
+}

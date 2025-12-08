@@ -1,0 +1,181 @@
+@use "../../assists/" as *;
+@use "../../base/" as *;
+
+.home-princing-section {
+    margin-bottom: 144px;
+    position: relative;
+    z-index: 1;
+
+    @include bp(mdx) {
+        margin-bottom: 100px;
+    }
+
+    .pricing-content-wrapper {
+        display: grid;
+        grid-template-columns: 57% auto;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 60px 80px;
+
+        .pricing-table-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 30px;
+
+            @include bp(smx) {
+                grid-template-columns: auto;
+                gap: 60px;
+            }
+
+            .pricing-detail {
+                text-align: center;
+
+                .bottom-figure,
+                .top-figure {
+                    line-height: 1;
+
+                    img {
+                        width: 100%;
+                        vertical-align: bottom;
+                    }
+                }
+
+                .bottom-figure {
+                    img {
+                        vertical-align: top;
+                    }
+                }
+
+
+                .pricing-head {
+                    padding: 20px 30px 30px;
+                    background-color: $primary-color;
+                    color: $light-color;
+
+                    .pricing-title {
+                        line-height: 1.3;
+                        display: inline-block;
+                        margin: 0;
+                        @include font14;
+                    }
+
+                    .cost {
+                        font-size: 55px;
+                        margin: 10px 0;
+
+                        @include bp(mdx) {
+                            font-size: 35px;
+                        }
+                    }
+
+                    .tax-info {
+                        color: $inner-text-color;
+                        @include font16;
+                    }
+                }
+
+                .price-info {
+                    padding: 40px 40px 45px;
+                    margin: 0;
+                    border-width: 0 2px 0;
+                    border-style: dashed;
+                    border-color: rgba($primary-color, 0.22);
+                }
+
+                .ticket-info {
+                    padding: 30px 20px;
+                    background-color: $light-color;
+                    color: $dark-color;
+
+                    .Seats-info {
+                        line-height: 1.3;
+                        display: inline-block;
+                        margin-bottom: 15px;
+                        @include font14;
+                    }
+                }
+            }
+        }
+
+        .price-detail-info {
+            .section-head {
+                margin-bottom: 30px;
+
+                .section-title {
+                    .shadow-title-text {
+                        font-size: 95px;
+
+                        @include bp(lgx) {
+                            font-size: 75px;
+                        }
+
+                        @include bp(mdx) {
+                            font-size: 55px;
+                            top: -36px;
+                        }
+
+                        @include bp(smx) {
+                            font-size: 40px;
+                        }
+
+                        @include bp(xsx) {
+                            font-size: 30px;
+                        }
+                    }
+
+                    @extend .section-title;
+
+                }
+
+                .section-info {
+                    margin-bottom: 0;
+                }
+            }
+
+            .price-info-list {
+                box-shadow: 15px 15px 0px 0px rgba(107, 0, 97, 0.22);
+                padding: 30px;
+                border-radius: $border-radius-degree;
+                border: 3px solid rgba(240, 46, 136, 0.22);
+                color: $light-color;
+
+                .price-list {
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+
+                        li.price-item {
+                            line-height: 1;
+                            margin-bottom: 10px;
+                            position: relative;
+                            @include font16;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            &:before {
+                                content: "\f87f";
+                                font-family: jkiticon !important;
+                                font-size: 14px;
+                                color: $primary-color;
+                                padding-right: 8px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include bp(lgx) {
+            grid-template-columns: auto;
+
+            .pricing-table-inner {
+                order: 2;
+            }
+        }
+    }
+}

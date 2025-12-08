@@ -1,0 +1,177 @@
+@use "../assists/" as *;
+@use "../base/" as *;
+
+.about-page-section {
+    padding-top: 150px;
+
+    @include bp(mdx) {
+        padding-top: 100px;
+    }
+
+    .about-inner-wrapper {
+        @include grid;
+        grid-template-columns: auto 43%;
+        gap: 50px;
+
+        @include bp(lgx) {
+            grid-template-columns: 100%;
+        }
+
+        .image-content-center {
+            .gallery-detail-type {
+                text-align: center;
+                padding: 0 40px 40px;
+                box-shadow: 15px 15px 0px 0px rgba(107, 0, 97, 0.22);
+                border-radius: $border-radius-degree;
+                position: relative;
+                border: 3px solid rgba($primary-color, 0.22);
+                @include flexbox;
+                @include justify-content(center);
+                flex-direction: column;
+                margin: -40px 50px 0;
+                z-index: 1;
+                background-color: $secondary-color;
+
+                @include bp(smx) {
+                    padding: 0 20px 40px;
+                    margin: -40px 20px 0;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-image: url(assets/img/eventux-image-011.png);
+                    background-position: center right;
+                    background-repeat: no-repeat;
+                    background-size: 30% auto;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.05;
+                    z-index: -1;
+                }
+
+                .video-button {
+                    text-align: center;
+                    margin: -30px auto 40px;
+
+                    a {
+                        background-color: $primary-color;
+                        width: 80px;
+                        height: 80px;
+                        line-height: 79px;
+
+                        i {
+                            font-size: 18px;
+                            color: $light-color;
+
+                        }
+                    }
+                }
+
+                .gallery-info {
+                    .gallery-detail {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .about-inner-info-content {
+            .about-info {
+                margin-bottom: 34px;
+            }
+
+            .about-goal {
+                padding: 30px 35px;
+                background-color: #140a2c;
+                box-shadow: 15px 15px 0px 0px rgba($primary-color, 0.2);
+                border-radius: 30px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                text-align: center;
+                margin-bottom: 50px;
+
+                .goal-box {
+                    .goal-icon {
+                        background-color: $primary-color;
+                        padding: 15px;
+                        font-size: 30px;
+                        color: $light-color;
+                        box-shadow: 6px 6px 0px 0px rgba($primary-color, 0.2);
+                        border-radius: 50%;
+                        height: 60px;
+                        width: 60px;
+                        text-align: center;
+                        display: inline-block;
+                        margin: 0 auto 20px;
+                        line-height: 30px;
+                    }
+
+                    .user-check {
+                        font-size: 24px;
+                    }
+
+                    .goal-title {
+                        margin-bottom: 0;
+                        font-size: 16px;
+                        font-weight: 600;
+                        font-family: $primary-font;
+                    }
+                }
+            }
+
+            .price-info-list {
+                padding: 30px;
+                border-radius: $border-radius-degree;
+                border: 3px solid rgba(167, 167, 167, 0.13);
+                color: $light-color;
+                margin-bottom: 20px;
+
+                .list-title {
+                    font-weight: 600;
+                }
+
+                .price-list {
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+
+                        li.price-item {
+                            line-height: 1;
+                            margin-bottom: 10px;
+                            position: relative;
+                            @include font16;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            &:before {
+                                content: "\f87f";
+                                font-family: jkiticon !important;
+                                font-size: 14px;
+                                color: $primary-color;
+                                padding-right: 8px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sponser-divider {
+                margin-bottom: 25px;
+
+                .sponser-title {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

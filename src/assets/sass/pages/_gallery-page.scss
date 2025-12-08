@@ -1,0 +1,17 @@
+@use "../assists" as *;
+
+.gallery-section {
+    @include tb150-margin;
+
+    .home-gallery-section {
+        .gallery-content {
+            .image-content-center {
+                display: flex;
+                gap: 50px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+    }
+}

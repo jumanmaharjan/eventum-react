@@ -1,0 +1,134 @@
+@use "../../assists/" as *;
+
+.home-join-section {
+  .section-head {
+    @include flexbox;
+    @include align-items(center);
+    gap: 60px;
+    margin-bottom: 40px;
+
+    .section-title {
+      width: 40%;
+    }
+
+    .section-info {
+      width: 40%;
+      flex-grow: 1;
+
+      @include bp(xsx) {
+        width: auto;
+      }
+    }
+
+    .join-btn {
+      width: 20%;
+      text-align: end;
+
+      @include bp(xsx) {
+        text-align: start;
+      }
+    }
+
+    @include bp(lgx) {
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .section-title {
+        width: 100%;
+      }
+
+      .join-btn {
+        width: auto;
+      }
+    }
+  }
+
+  .service-content-wrapper {
+    @include grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 80px;
+    align-items: center;
+
+    .service-type {
+      @include flexbox;
+      @include align-items(start);
+      gap: 15px;
+      box-shadow: 15px 15px 0px 0px rgba(107, 0, 97, 0.22);
+      padding: 60px 50px;
+      border-radius: $border-radius-degree;
+      position: relative;
+      border: 3px solid rgba($primary-color, 0.22);
+
+      @include bp(lgx) {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 60px 25px;
+      }
+
+      &:nth-child(even) {
+        @include bp(md) {
+          margin-top: 55px;
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url(../../assets/img/eventux-image-011.png);
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: 30% auto;
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: -1;
+      }
+
+      .service-figure {
+        flex-basis: 40%;
+        font-size: 140px;
+        line-height: 1;
+        text-align: center;
+
+        @include bp(lg) {
+          order: 2;
+        }
+
+        @include bp(mdx) {
+          font-size: 100px;
+        }
+      }
+
+      .service-info {
+        flex-basis: 60%;
+      }
+    }
+
+    @include bp(lgx) {
+      gap: 50px;
+    }
+
+    @include bp(mdx) {
+      grid-template-columns: auto;
+      gap: 50px;
+
+      .service-type {
+        margin: auto;
+        align-items: center;
+      }
+    }
+
+    @include bp(smx) {
+      .service-type {
+        padding: 30px 25px;
+
+        .service-figure {
+          font-size: 100px;
+        }
+      }
+    }
+  }
+}

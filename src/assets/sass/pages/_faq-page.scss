@@ -1,0 +1,149 @@
+@use "../assists" as *;
+
+.faq-page-section {
+    @include tb150-margin;
+
+    .section-head {
+        @include flexbox;
+        gap: 30px 50px;
+        @include align-items(baseline);
+        margin-bottom: 50px;
+
+        &>* {
+            flex-basis: 50%;
+        }
+
+        @include bp(mdx) {
+            flex-wrap: wrap;
+
+            &>* {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    .faq-page-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px 50px;
+
+        &>* {
+            flex-basis: 50%;
+        }
+
+        @include bp(mdx) {
+            flex-wrap: wrap;
+
+            &>* {
+                flex-basis: 100%;
+            }
+        }
+
+        .accordion-content .card {
+            background-color: $secondary-color;
+        }
+
+        .faq-left-info .accordion-content .card .card-header a {
+            background-color: #000;
+        }
+
+        .accordion-content .card .card-header a {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 21px;
+            padding-right: 40px;
+            background-color: $primary-color;
+            color: $light-color;
+
+            @include bp(mdx) {
+                font-size: 14px;
+            }
+        }
+
+        .accordion-content .card .card-header a:before {
+            color: $light-color;
+            right: 30px;
+        }
+
+        .accordion-content .card .card-header a.collapsed {
+            background-color: $light-color;
+            color: #000;
+
+            &:before {
+                color: #000;
+            }
+        }
+
+        .accordion-content .card .card-body {
+            padding: 25px 25px 15px 25px;
+            background-color: transparent;
+            font-size: 16px;
+
+            @include bp(mdx) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.faq-contact-section {
+    margin-bottom: 150px;
+    background-image: radial-gradient(at center center, #F02E8882 0%, $secondary-color 71%);
+
+    .faq-contact-wrapper {
+        display: grid;
+        grid-template-columns: auto 36%;
+        gap: 60px 100px;
+        align-items: center;
+
+        @include bp(lgx) {
+            gap: 40px;
+        }
+
+        @include bp(mdx) {
+            grid-template-columns: 1fr;
+        }
+
+        .section-head-margin35 {
+            .section-info {
+                color: $light-color;
+            }
+        }
+
+        .contact-wrapper {
+            padding: 15px 40px;
+            display: inline-flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 10px 10px 0px 0px rgba(240, 46, 136, 0.18);
+
+            .icons {
+                background-color: $primary-color;
+                width: 70px;
+                height: 70px;
+                line-height: 69px;
+                border-radius: 50%;
+                color: $light-color;
+                font-size: 35px;
+                text-align: center;
+
+                @include bp(mdx) {
+                    font-size: 30px;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 59px;
+                }
+            }
+        }
+    }
+
+    @include bp(mdx) {
+        margin-bottom: 100px;
+
+        .faq-contact-wrapper {
+            .faq-contact-img {
+                width: fit-content;
+            }
+        }
+    }
+}

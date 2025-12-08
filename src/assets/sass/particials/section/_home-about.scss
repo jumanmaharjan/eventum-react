@@ -1,0 +1,345 @@
+@use "../../assists" as *;
+@use "../../base/" as *;
+
+.home-about-section {
+  padding-top: 100px;
+  margin-top: -50px;
+  margin-bottom: 144px;
+  position: relative;
+  z-index: 1;
+
+  @include bp(mdx) {
+    margin-bottom: 100px;
+  }
+
+  &:before {
+    content: "";
+    background-image: url(../../assets/img/eventux-image-002.png);
+    background-position: top center;
+    background-repeat: repeat-x;
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+  }
+
+  .about-counter-wrapper {
+    @include flex-vh-center;
+    gap: 20px;
+
+    @include bp(lgx) {
+      flex-direction: column;
+    }
+
+    .about-counter-left-side {
+      flex-basis: 25%;
+
+      @include bp(lgx) {
+        text-align: center;
+      }
+    }
+
+    .about-counter-right-side {
+      flex-grow: 1;
+
+      @include bp(lgx) {
+        width: 100%;
+      }
+
+      .time-counter {
+        @include flexbox;
+        @include justify-content(space-evenly);
+        @include flex-wrap(wrap);
+        align-items: center;
+        text-align: center;
+
+        .counter-time {
+          width: 150px;
+          height: 150px;
+          padding: 20px;
+          @include border-radius($border-radius-degree);
+          border: 3px solid rgba($primary-color, 0.38);
+          box-shadow: 10px 10px 0px 0px rgba(107, 0, 98, 0.22);
+          @include flexbox;
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(center);
+          position: relative;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          [class*="counter-"] {
+            color: $light-color;
+            @include font-size(48);
+            font-family: $title-font;
+            font-weight: 700;
+            line-height: 1.1;
+            display: block;
+            margin-bottom: 3px;
+          }
+
+          .label-text {
+            color: $light-color;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          @include bp(mdx) {
+            width: 120px;
+            height: 120px;
+
+            [class*="counter-"] {
+              font-size: 32px;
+            }
+          }
+        }
+
+        .time-symbol {
+          font-weight: 700;
+          font-size: 35px;
+          font-family: $title-font;
+          line-height: 1.1;
+          color: $text-color;
+          display: inline-block;
+        }
+
+        @include bp(smx) {
+          gap: 30px 20px;
+
+          .time-symbol {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .about-wrapper {
+    margin-top: 144px;
+    display: grid;
+    grid-template-columns: auto 42%;
+    grid-row-gap: 50px;
+    grid-column-gap: 100px;
+    align-items: start;
+
+    @include bp(lgx) {
+      grid-column-gap: 50px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include bp(mdx) {
+      margin-top: 100px;
+    }
+  }
+
+  .about-image-wrapper {
+    position: relative;
+    @include flexbox;
+    padding: 50px 0;
+
+    @include bp(lgx) {
+      order: 2;
+    }
+
+    @include bp(xsx) {
+      flex-direction: column;
+      gap: 50px;
+      padding: 0;
+    }
+
+    &:after {
+      content: "";
+      background-image: url(../../assets/img/eventux-image-004.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include opacity(0.15);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .about-left-img-content {
+      @include flexbox;
+      @include justify-content(flex-start);
+      @include flex-basis(28%);
+      gap: 50px;
+      flex-direction: column;
+
+      @include bp(xsx) {
+        flex-basis: 100%;
+
+        figure {
+          margin: 0;
+        }
+      }
+
+      .left-top {
+        @include figure-round-border;
+        border: 8px solid $secondary-color;
+        margin: -40px -30px 0px 20px;
+        z-index: 1;
+
+        @include bp(xsx) {
+          margin: 0;
+        }
+      }
+
+      .left-bottom {
+        @include figure-round-border;
+        border: 3px solid rgba($primary-color, 0.52);
+        margin-right: 30px;
+
+        @include bp(xsx) {
+          margin: 0;
+        }
+      }
+    }
+
+    .about-center-image {
+      @include flex-basis(44%);
+      @include figure-round-border;
+      border: 4px solid rgba($primary-color, 0.52);
+
+      @include bp(xsx) {
+        flex-basis: 100%;
+      }
+    }
+
+    .about-right-img-content {
+      @include flexbox;
+      @include justify-content(flex-end);
+      @include flex-basis(28%);
+      gap: 50px;
+      flex-direction: column;
+
+      @include bp(xsx) {
+        flex-basis: 100%;
+      }
+
+      .right-top {
+        @include figure-round-border;
+        border: 3px solid rgba($primary-color, 0.52);
+        margin-left: 30px;
+
+        @include bp(xsx) {
+          margin: 0;
+        }
+      }
+
+      .right-bottom {
+        @include figure-round-border;
+        border: 8px solid $secondary-color;
+        margin: 0px 20px -40px -30px;
+        z-index: 1;
+
+        @include bp(xsx) {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .about-info-wrapper {
+    .about-short-info {
+      margin-bottom: 30px;
+    }
+
+    .about-detail-wrapper {
+      @include flexbox;
+      @include align-items(center);
+      gap: 15px 40px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+
+      .author_content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .author-img {
+          border-radius: 50%;
+          width: 63px;
+          overflow: clip;
+        }
+
+        .auther-info {
+          h6 {
+            margin-bottom: 3px;
+            font-weight: 600;
+          }
+
+          p {
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .about-goal {
+      padding: 30px 35px;
+      background-color: #140a2c;
+      box-shadow: 15px 15px 0px 0px rgba($primary-color, 0.2);
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px 10px;
+      text-align: center;
+
+      @include bp(xsx) {
+        flex-direction: column;
+      }
+
+      .goal-box {
+        .goal-icon {
+          background-color: $primary-color;
+          padding: 15px;
+          font-size: 30px;
+          color: $light-color;
+          box-shadow: 6px 6px 0px 0px rgba($primary-color, 0.2);
+          border-radius: 50%;
+          height: 60px;
+          width: 60px;
+          text-align: center;
+          display: inline-block;
+          margin: 0 auto 20px;
+          line-height: 30px;
+        }
+
+        .goal-title {
+          margin-bottom: 0;
+          font-size: 16px;
+          font-weight: 600;
+          font-family: $primary-font;
+        }
+
+        @include bp(mdx) {
+          .goal-icon {
+            font-size: 25px;
+          }
+
+          .goal-title {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

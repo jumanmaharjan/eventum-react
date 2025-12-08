@@ -1,0 +1,145 @@
+@use "../../assists/" as *;
+
+.home-team-section {
+    margin-bottom: 144px;
+    margin-top: 150px;
+
+    @include bp(mdx) {
+        margin-bottom: 100px;
+        margin-top: 100px
+    }
+
+    .team-detail-container {
+        @include grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        gap: 40px;
+
+        .team-info-content {
+            .section-info {
+                margin-bottom: 35px;
+            }
+
+            .team-btn {
+                margin-bottom: 50px;
+            }
+        }
+
+        .speaker-img-wrapper {
+            @include flexbox;
+            @include align-items(flex-start);
+            gap: 40px;
+
+            .team-figure {
+                border-radius: $border-radius-degree;
+                overflow: clip;
+                border: 3px solid;
+                border-color: rgba($primary-color, 0.52);
+                position: relative;
+
+                &:nth-child(even) {
+                    margin-top: -90px;
+                }
+
+                &:hover {
+                    .team-detail {
+                        height: 100%;
+                        opacity: 1;
+                    }
+                }
+
+                .team-detail {
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    height: 0%;
+                    opacity: 0;
+                    bottom: 0;
+                    left: 0;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    background-image: linear-gradient(180deg, #190C37BD 0%, #F2295B8F 100%);
+                    @include transition(all 0.4s ease-out);
+
+                    .team-name {
+                        margin-bottom: 4px;
+                        display: inline-block;
+                    }
+
+                    .job-title {
+                        display: inline-block;
+                        margin-bottom: 25px;
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: $light-color;
+                    }
+
+                    .social-group {
+                        >ul {
+                            padding: 0;
+                            margin: 0;
+                            list-style-type: none;
+
+                            >li {
+                                display: inline-block;
+                                margin: 0 1px;
+
+                                a {
+                                    display: inline-block;
+                                    height: 30px;
+                                    width: 30px;
+                                    line-height: 29px;
+                                    background-color: $primary-color;
+                                    color: $light-color;
+                                    font-size: 12px;
+                                    border-radius: 50%;
+                                    text-align: center;
+                                    @include transition(all 0.4s ease-out);
+                                }
+
+                                &:hover {
+                                    a {
+                                        background-color: $hover-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .leftside-speaker-img {
+            margin-top: 90px;
+        }
+
+        .home-counter-section {
+            margin-top: 40px;
+        }
+
+        @include bp(lgx) {
+            grid-template-columns: auto;
+
+            .home-counter-section {
+                justify-content: space-around;
+            }
+
+            @include bp(smx) {
+                .speaker-img-wrapper {
+                    flex-direction: column;
+                    margin: auto;
+                    gap: 30px;
+                    align-items: center;
+
+                    .team-figure:nth-child(even) {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}

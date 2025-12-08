@@ -1,0 +1,139 @@
+@use "../../assists/" as *;
+
+.home-schedule-section {
+  .section-head {
+    margin-bottom: 60px;
+  }
+
+  .day-routine-content {
+    @include grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+    gap: 100px 0;
+
+    @include bp(lgx) {
+      gap: 50px;
+      grid-template-columns: auto;
+    }
+
+    .routine-left {
+      @include bp(lg) {
+        padding-right: 40px;
+        border-right: 2px solid rgba($color: $light-color, $alpha: 0.05);
+      }
+    }
+
+    .routine-right {
+      @include bp(lg) {
+        padding-left: 40px;
+      }
+    }
+
+    .routine-content {
+      text-align: center;
+
+      .week-title {
+        display: inline-block;
+        padding: 15px 30px;
+        border: 3px solid rgba($color: $primary-color, $alpha: 0.22);
+        border-radius: $border-radius-degree;
+        text-align: center;
+        box-shadow: 8px -8px 0px 0px rgba(107, 0, 97.99999999999993, 0.22);
+        position: relative;
+        line-height: 1;
+        margin-bottom: 45px;
+
+        i {
+          color: $primary-color;
+          font-size: 14px;
+          margin-right: 5px;
+        }
+
+        h5 {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 1;
+          color: $light-color;
+          display: inline-block;
+          margin: 0;
+
+          @include bp(mdx) {
+            font-size: 14px;
+          }
+        }
+
+        .jki-arrow-point-to-down-light {
+          position: absolute;
+          color: rgba($color: $primary-color, $alpha: 0.22);
+          bottom: -25px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 30px;
+        }
+      }
+
+      .routine-detail {
+        @include grid;
+        justify-content: center;
+        grid-template-columns: 30% auto;
+        margin-bottom: 45px;
+        border-radius: $border-radius-degree;
+        overflow: hidden;
+        background-color: rgba($color: $primary-color, $alpha: 0.15);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .time-detail {
+          padding: 50px 30px;
+
+          .time-title {
+            margin-bottom: 10px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: $light-color;
+          }
+
+          .time-period {
+            margin-bottom: 0;
+          }
+        }
+
+        .routine-description {
+          background-color: $box-color;
+          padding: 30px;
+          text-align: left;
+
+          .chapter-title {
+            margin-bottom: 10px;
+          }
+
+          .ch-paragraph {
+            margin-bottom: 10px;
+          }
+
+          .chapter-link {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.3;
+
+            @include bp(mdx) {
+              font-size: 10px;
+            }
+          }
+        }
+
+        @include bp(xsx) {
+          grid-template-columns: auto;
+
+          .time-detail {
+            padding: 15px 30px;
+          }
+        }
+      }
+    }
+  }
+}

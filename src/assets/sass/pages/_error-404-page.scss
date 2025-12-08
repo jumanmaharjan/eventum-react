@@ -1,0 +1,76 @@
+@use "../assists" as *;
+
+.no-content-section {
+    background-image: radial-gradient(at center center, #6B0062E0 0%, $secondary-color 100%);
+    padding: 190px 0 300px;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: $secondary-color;
+    }
+}
+
+.no-content-wrap {
+    text-align: center;
+
+    .error-title {
+        font-size: 200px;
+        font-weight: 900;
+        line-height: 1;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.43);
+        color: $primary-color;
+
+        @include bp(mdx) {
+            font-size: 125px;
+        }
+    }
+
+    .page-content-title {
+        font-size: 55px;
+
+        @include bp(mdx) {
+            font-size: 40px;
+        }
+    }
+
+    .search-form-wrap {
+        max-width: 841px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 26px;
+        overflow: hidden;
+        margin-bottom: 50px;
+
+        h6 {
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .search-form {
+            background-color: $light-color;
+            overflow: hidden;
+            @include border-radius($border-radius-degree);
+
+            input {
+                padding: 0 55px 0 20px;
+                background-color: $light-color;
+                border: none;
+                height: 55px;
+            }
+
+            button {
+                padding: 10px 30px;
+                top: 0;
+                right: 0;
+                height: 100%;
+            }
+        }
+    }
+}

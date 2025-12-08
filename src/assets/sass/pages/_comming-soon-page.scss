@@ -1,0 +1,220 @@
+@use "../assists" as *;
+
+.comming-soon-section {
+    height: 100vh;
+    @include flexbox;
+    @include align-items(center);
+    position: relative;
+
+    * {
+        color: $light-color;
+    }
+
+    .primary-color {
+        color: $primary-color;
+    }
+
+    .comming-soon-wrap {
+        color: $light-color;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .site-identity-logo {
+        .site-title {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: $text-color;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .comming-soon-content {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        text-align: center;
+
+        .section-title {
+            font-family: $text-shadow-font;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            text-transform: capitalize;
+            -webkit-text-stroke-width: 2px;
+            stroke-width: 2px;
+            -webkit-text-stroke-color: $primary-color;
+            stroke: $primary-color;
+            color: transparent;
+        }
+    }
+
+    .time-counter-wrap {
+        margin-bottom: 60px;
+
+        @include bp(mdx) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .time-counter {
+        @include flexbox;
+        @include justify-content(space-evenly);
+        @include flex-wrap(wrap);
+        align-items: center;
+        text-align: center;
+
+        .counter-time {
+            width: 150px;
+            height: 150px;
+            padding: 20px;
+            @include border-radius($border-radius-degree);
+            border: 3px solid rgba($primary-color, 0.25);
+            box-shadow: 10px 10px 0px 0px rgba(107, 0, 98, 0.2);
+            @include flexbox;
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            position: relative;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            [class*="counter-"] {
+                color: $light-color;
+                @include font-size(48);
+                font-family: $title-font;
+                font-weight: 700;
+                line-height: 1.1;
+                display: block;
+                margin-bottom: 3px;
+            }
+
+            .label-text {
+                color: $light-color;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            @include bp(mdx) {
+                width: 120px;
+                height: 120px;
+
+                [class*="counter-"] {
+                    font-size: 32px;
+                }
+            }
+        }
+
+        .time-symbol {
+            font-weight: 700;
+            font-size: 35px;
+            font-family: $title-font;
+            line-height: 1.1;
+            color: $text-color;
+            display: inline-block;
+
+            @include bp(lg) {
+                flex-grow: 1;
+            }
+        }
+
+        @include bp(smx) {
+            gap: 30px 20px;
+
+            .time-symbol {
+                display: none;
+            }
+        }
+    }
+
+    .social-icons {
+        margin-top: 10px;
+        text-align: center;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 1px;
+        }
+
+        a {
+            border: 1px solid $text-color;
+            text-align: center;
+            @include font-size(16);
+            @include border-radius(100%);
+            display: block;
+            width: 36px;
+            height: 36px;
+            line-height: 35px;
+            @include transition(all 0.4s);
+
+            @include bp(mdx) {
+                height: 32px;
+                width: 32px;
+                line-height: 31px;
+                @include font-size(14);
+            }
+
+            i {
+                color: $text-color;
+            }
+
+            &:hover {
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+                color: $light-color;
+            }
+        }
+
+        @include bp(mdx) {
+            text-align: center;
+        }
+    }
+
+    @include bp(xlx) {
+        padding: 35px 0;
+    }
+
+    @include bp(mdx) {
+        .comming-soon-content {
+            margin-top: 40px;
+        }
+
+        .comming-soon-footer {
+            text-align: center;
+        }
+
+        .com-contact-info {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include bp(smx) {
+        .comming-soon-content {
+            h2 {
+                @include font-size(30);
+            }
+        }
+    }
+}

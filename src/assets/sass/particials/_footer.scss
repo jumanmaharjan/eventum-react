@@ -1,0 +1,122 @@
+@use "../assists/" as *;
+
+.site-footer {
+
+
+    .top-footer {
+
+        .widget {
+
+            .widget-title {
+                color: $primary-color;
+                text-transform: uppercase;
+                margin-bottom: 45px;
+            }
+
+            .textwidget {
+                margin-bottom: 20px;
+            }
+
+            ul {
+
+                li {
+                    margin-bottom: 9px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    a {
+                        display: inline-block;
+                        color: $text-color;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $hover-color;
+
+                            i {
+                                color: $hover-color;
+                            }
+                        }
+                    }
+
+                    @include bp (smx) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-social-links {
+            margin: 0;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    display: inline-block;
+
+                    a {
+                        line-height: 1;
+
+                        i {
+                            position: relative;
+                            height: 32px;
+                            width: 32px;
+                            line-height: 31px;
+                            background-color: $primary-color;
+                            color: $light-color;
+                            font-size: 13px;
+                            border-radius: 50%;
+                            text-align: center;
+                            @include transition(all 0.4s);
+
+                            &:hover {
+                                background-color: $hover-color;
+                                color: $light-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-join-us {
+            p.textwidget {
+                margin-bottom: 35px;
+            }
+
+            .footer-section-button {
+                display: inline-block;
+            }
+        }
+    }
+
+    .bottom-footer {
+        margin-top: 30px;
+        padding: 30px 0 20px;
+        border-top: 1px solid rgba($light-color, 0.08);
+
+        @include bp(mdx) {
+            margin-top: 15px;
+        }
+
+        .copy-right {
+            font-size: 14px;
+            margin-bottom: 0;
+
+            @include bp(xsx) {
+                font-size: 12px;
+            }
+        }
+    }
+}
