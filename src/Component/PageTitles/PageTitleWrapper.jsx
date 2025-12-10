@@ -9,7 +9,7 @@ const PageTitleWrapper = () => {
   const { id } = useParams();
 
   // Exclude paths where title should NOT appear
-  const excludedPages = ["/", "/search", "/404"];
+  const excludedPages = ["/", "/search"];
 
   if (excludedPages.includes(pathname)) return <Outlet />;
 

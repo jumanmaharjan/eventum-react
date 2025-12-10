@@ -1,24 +1,39 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function QuickSearch({ showSearch, setShowSearch }) {
-  const [serch, setSearch] = useState("");
-  function serchtxt(e) {
+  const [search, setSearch] = useState(""); // Corrected typo in state name
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
     setSearch(e.target.value);
-  }
-  function handleSubmit(e) {
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(serch);
-  }
+    if (search.trim()) {
+      // Prevent submitting an empty search
+      navigate(`/search?query=${search}`);
+      handleCloseSearch();
+    }
+  };
+
+  const handleCloseSearch = (e) => {
+    if (e) e.preventDefault();
+    setShowSearch(false);
+  };
+
+  const handleInputClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <>
       <div
         className={
           showSearch ? "header-search-form search-in" : "header-search-form"
         }
-        onClick={(e) => {
-          e.preventDefault();
-          setShowSearch(false);
-        }}
+        onClick={handleCloseSearch}
       >
         <div className="container">
           <div className="header-search-container">
@@ -30,19 +45,14 @@ function QuickSearch({ showSearch, setShowSearch }) {
             >
               <input
                 type="text"
-                name={serch}
+                name="query"
+                value={search}
                 placeholder="Enter your text..."
-                onChange={serchtxt}
+                onChange={handleSearchChange}
+                onClick={handleInputClick}
               />
             </form>
-            <a
-              href="#"
-              className="search-close"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowSearch(false);
-              }}
-            >
+            <a href="#" className="search-close" onClick={handleCloseSearch}>
               <i className="fas fa-times"></i>
             </a>
           </div>
