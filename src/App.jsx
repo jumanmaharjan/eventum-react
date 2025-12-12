@@ -22,6 +22,8 @@ import SearchPage from "./Pages/SearchPage/SearchPage";
 import ReservationPage from "./Pages/ReservationPage/ReservationPage";
 // import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import ComingSoon from "./Pages/ComingSoon";
+import SinglePostSection from "./Pages/SinglePostSection";
+import BlogArchive from "./Pages/BlogArchive";
 function App() {
   return (
     <BrowserRouter>
@@ -48,6 +50,8 @@ function App() {
             <Route path="testimonial" element={<TestimonialPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/reservation" element={<ReservationPage />} />
+            <Route path="/single-blog" element={<SinglePostSection />} />
+            <Route path="/blog-archive" element={<BlogArchive />} />
 
             <Route path="/contact" element={<ContactPage />} />
           </Route>
